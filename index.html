@@ -1,4 +1,4 @@
-<!-- havenfield-web 2026-10-03g single-thread -->
+<!-- havenfield-web 2026-10-03h single-thread -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -14,11 +14,10 @@ html, body {
 	height: 100%;
 	height: 100dvh;
 	overflow: hidden;
-	background-color: #4898d3; /* splash sky edge — not page gray */
+	background-color: #4898d3;
 	touch-action: none;
 	color: white;
 }
-
 #canvas {
 	display: block;
 	margin: 0;
@@ -29,22 +28,9 @@ html, body {
 	height: 100dvh;
 	touch-action: none;
 }
-
-#canvas:focus {
-	outline: none;
-}
-
-#status, #status-splash, #status-progress {
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-
-#status, #status-splash {
-	top: 0;
-	bottom: 0;
-}
-
+#canvas:focus { outline: none; }
+#status, #status-splash, #status-progress { position: absolute; left: 0; right: 0; }
+#status, #status-splash { top: 0; bottom: 0; }
 #status {
 	background-color: #4898d3;
 	display: flex;
@@ -53,35 +39,13 @@ html, body {
 	align-items: center;
 	visibility: hidden;
 }
-
-#status-splash {
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
-}
-
-#status-progress, #status-notice {
-	display: none;
-}
-
-#status-progress {
-	bottom: 10%;
-	width: 50%;
-	margin: 0 auto;
-}
-
+#status-splash { max-height: 100%; max-width: 100%; margin: auto; }
+#status-progress, #status-notice { display: none; }
+#status-progress { bottom: 10%; width: 50%; margin: 0 auto; }
 #status-notice {
-	background-color: #5b3943;
-	border-radius: 0.5rem;
-	border: 1px solid #9b3943;
-	color: #e0e0e0;
-	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
-	line-height: 1.3;
-	margin: 0 2rem;
-	overflow: hidden;
-	padding: 1rem;
-	text-align: center;
-	z-index: 1;
+	background-color: #5b3943; border-radius: 0.5rem; border: 1px solid #9b3943;
+	color: #e0e0e0; font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+	line-height: 1.3; margin: 0 2rem; overflow: hidden; padding: 1rem; text-align: center; z-index: 1;
 }
 </style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
@@ -105,7 +69,7 @@ html, body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":78500304,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":81274400,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
