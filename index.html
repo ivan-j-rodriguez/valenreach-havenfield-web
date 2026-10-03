@@ -1,4 +1,4 @@
-<!-- havenfield-web 2026-10-03 single-thread -->
+<!-- havenfield-web 2026-10-03b single-thread -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -98,7 +98,7 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":52914544,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":37497792,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -195,6 +195,19 @@ const engine = new Engine(GODOT_CONFIG);
 	}
 }());
 		</script>
+	<script>
+/* Keep arrow keys and Space on the game canvas. */
+document.addEventListener("keydown", function (ev) {
+	var k = ev.key;
+	if (k === "ArrowUp" || k === "ArrowDown" || k === "ArrowLeft" || k === "ArrowRight" || k === " " || k === "Spacebar") {
+		ev.preventDefault();
+	}
+}, true);
+window.addEventListener("load", function () {
+	var canvas = document.getElementById("canvas");
+	if (canvas) canvas.focus();
+});
+</script>
 	</body>
 </html>
 
