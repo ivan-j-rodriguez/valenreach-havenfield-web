@@ -1,26 +1,33 @@
-<!-- havenfield-web 2026-10-03f single-thread -->
+<!-- havenfield-web 2026-10-03g single-thread -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, viewport-fit=cover">
 		<title>Valenreach</title>
 		<style>
-html, body, #canvas {
+html, body {
 	margin: 0;
 	padding: 0;
 	border: 0;
-}
-
-body {
-	color: white;
-	background-color: black;
+	width: 100%;
+	height: 100%;
+	height: 100dvh;
 	overflow: hidden;
+	background-color: #4898d3; /* splash sky edge — not page gray */
 	touch-action: none;
+	color: white;
 }
 
 #canvas {
 	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+	height: 100dvh;
+	touch-action: none;
 }
 
 #canvas:focus {
@@ -39,7 +46,7 @@ body {
 }
 
 #status {
-	background-color: #242424;
+	background-color: #4898d3;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -76,7 +83,7 @@ body {
 	text-align: center;
 	z-index: 1;
 }
-		</style>
+</style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 
@@ -98,7 +105,7 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":98297904,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":78500304,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -195,6 +202,7 @@ const engine = new Engine(GODOT_CONFIG);
 	}
 }());
 		</script>
+	
 			<script>
 document.addEventListener("keydown", function (ev) {
 	var k = ev.key;
@@ -206,6 +214,20 @@ window.addEventListener("load", function () {
 	var canvas = document.getElementById("canvas");
 	if (canvas) canvas.focus();
 });
+</script>
+	
+			<script>
+(function () {
+	function snapCanvas() {
+		var c = document.getElementById("canvas");
+		if (!c) return;
+		c.style.width = "100%";
+		c.style.height = "100dvh";
+	}
+	window.addEventListener("resize", snapCanvas);
+	window.addEventListener("orientationchange", snapCanvas);
+	snapCanvas();
+})();
 </script>
 	</body>
 </html>
